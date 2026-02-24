@@ -63,22 +63,20 @@ Quick Start (FPGA Demo)
 
 1. Generate the Hardware IP:
 Run the Makefile synthesis script to generate the generic Verilog files.
-Bash
-
-Make
+    Make
 
 2. Build the SoC (LiteX):
 Navigate to gateware/ and use LiteX to stitch the AI IP to a softcore CPU and synthesize the bitstream (.sof).
-Bash
-
-python3 soc.py --build --load
+    python3 soc.py --build --load
 
 3. Run the Firmware:
 Navigate to firmware/ and compile the bare-metal C code. Ensure your board is connected via UART to view the inference results!
-Bash
+    cd firmware
+    make
 
-make
-make load
+4. View the FPGA
+Run this command to view the boot-up sequence.
+    litex_term --kernel firmware/firmware.bin --kernel-adr 0x40000000 --safe /dev/ttyUSB0
 
 ## References & Acknowledgments
 
