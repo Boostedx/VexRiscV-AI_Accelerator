@@ -40,8 +40,9 @@ graph TD
     end
     
     E --> K[UART Terminal: Predicted Digit]
+```
 
-The Hardware Handshake
+## The Hardware Handshake
 
 Because the AI accelerator computes at extreme FPGA hardware speeds, it uses an Avalon-style stall handshake to securely pass data back to the slower software CPU without race conditions.
 
