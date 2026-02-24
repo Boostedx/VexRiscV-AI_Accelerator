@@ -20,7 +20,7 @@ The system consists of a highly optimized Python-trained neural network that has
 
 ```mermaid
 graph TD
-    subgraph Software["Software Context (C Firmware)"]
+    subgraph Software["Software Context"]
         A[MNIST 28x28 Image Array] -->|Software| B[2x2 Max Pooling Algorithm]
         B -->|Software| C[14x14 Binarized Image]
         C -->|Memory Mapped Write| D[CSR Hardware Driver]
