@@ -1,20 +1,21 @@
 # Quartus / LiteX Build Files
 build/
-*.sof
-*.rbf
-*.jdi
-*.pin
-*.qpf
-*.qsf
-*.rpt
-*.summary
-
+*.csv
+*.json
 # Python / HLS
 __pycache__/
 *.pyc
-hls4ml_14/myproject_fpga.prj/
+myproject-fpga.prj/quartus
+myproject-fpga.prj/verification
+myproject-fpga.prj/reports
 
 # Firmware Binaries
 *.elf
 *.bin
 *.o
+
+# Testbench
+*.cpp
+
+*.log
+*.txt

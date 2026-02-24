@@ -1,0 +1,28 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate /home/renz/hls4ml_14/myproject-fpga.prj/components/myproject/myproject.qsys --block-symbol-file --output-directory=/home/renz/hls4ml_14/myproject-fpga.prj/components/myproject/myproject --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading myproject/myproject.qsys
+Progress: Reading input file
+Progress: Adding myproject_internal_inst [myproject_internal 1.0]
+Progress: Parameterizing module myproject_internal_inst
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate /home/renz/hls4ml_14/myproject-fpga.prj/components/myproject/myproject.qsys --synthesis=VERILOG --output-directory=/home/renz/hls4ml_14/myproject-fpga.prj/components/myproject/myproject/synthesis --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading myproject/myproject.qsys
+Progress: Reading input file
+Progress: Adding myproject_internal_inst [myproject_internal 1.0]
+Progress: Parameterizing module myproject_internal_inst
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: myproject: Generating myproject "myproject" for QUARTUS_SYNTH
+Info: myproject_internal_inst: "myproject" instantiated myproject_internal "myproject_internal_inst"
+Info: myproject: Done "myproject" with 2 modules, 345 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis
