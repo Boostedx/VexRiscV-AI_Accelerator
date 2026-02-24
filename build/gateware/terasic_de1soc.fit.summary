@@ -1,0 +1,20 @@
+Fitter Status : Successful - Sun Feb 22 01:50:54 2026
+Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Standard Edition
+Revision Name : terasic_de1soc
+Top-level Entity Name : terasic_de1soc
+Family : Cyclone V
+Device : 5CSEMA5F31C6
+Timing Models : Final
+Logic utilization (in ALMs) : 15,839 / 32,070 ( 49 % )
+Total registers : 31257
+Total pins : 52 / 457 ( 11 % )
+Total virtual pins : 0
+Total block memory bits : 636,576 / 4,065,280 ( 16 % )
+Total RAM Blocks : 99 / 397 ( 25 % )
+Total DSP Blocks : 46 / 87 ( 53 % )
+Total HSSI RX PCSs : 0
+Total HSSI PMA RX Deserializers : 0
+Total HSSI TX PCSs : 0
+Total HSSI PMA TX Serializers : 0
+Total PLLs : 1 / 6 ( 17 % )
+Total DLLs : 0 / 4 ( 0 % )
