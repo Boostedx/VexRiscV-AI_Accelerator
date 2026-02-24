@@ -63,21 +63,26 @@ Quick Start (FPGA Demo)
 
 1. Generate the Hardware IP:
 Run the Makefile synthesis script to generate the generic Verilog files.
+    ```bash
     Make
+    ```
 
 2. Build the SoC (LiteX):
 Navigate to gateware/ and use LiteX to stitch the AI IP to a softcore CPU and synthesize the bitstream (.sof).
+    ```bash
     python3 soc.py --build --load
-
+    ```
 3. Run the Firmware:
 Navigate to firmware/ and compile the bare-metal C code. Ensure your board is connected via UART to view the inference results!
+    ```bash
     cd firmware
     make
-
+    ```
 4. View the FPGA
 Run this command to view the boot-up sequence.
+    ```bash
     litex_term --kernel firmware/firmware.bin --kernel-adr 0x40000000 --safe /dev/ttyUSB0
-
+    ```
 ## References & Acknowledgments
 
 This project bridges the gap between machine learning and bare-metal hardware by leveraging several incredible open-source tools and frameworks. If you are exploring this repository, I highly recommend checking out the documentation for the following projects:
