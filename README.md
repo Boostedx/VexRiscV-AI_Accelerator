@@ -16,24 +16,24 @@ The system consists of a highly optimized Python-trained neural network that has
 * **Output Bus:** 320-bit parallel bus (10 classes × 32 bits).
 * **ASIC Ready:** Uses perfect routing divisors to map cleanly to standard digital logic cells.
 
-## 📊 System Block Diagram
+## System Block Diagram
 
 ```mermaid
 graph TD
-    subgraph Software Context (C Firmware)
+    subgraph Software["Software Context (C Firmware)"]
         A[MNIST 28x28 Image Array] -->|Software| B[2x2 Max Pooling Algorithm]
         B -->|Software| C[14x14 Binarized Image]
         C -->|Memory Mapped Write| D[CSR Hardware Driver]
     end
 
-    subgraph Generic Hardware AI IP (Verilog)
+    subgraph Hardware["Generic Hardware AI IP (Verilog)"]
         F[Control Logic: Start, Stall, Done] --> G[Input Registers: 98 x 32-bit]
         G --> H[AI Core: 32-Neuron Hidden Layer]
         H --> I[AI Core: 10-Class Output]
         I --> J[Output Registers: 10 x 32-bit]
     end
 
-    subgraph System SoC
+    subgraph SoC["System SoC"]
         E[Generic CPU e.g., RISC-V] <-->|System Bus / CSR Interface| F
         D -->|Bus Interface| E
         J -->|Memory Mapped Read| E
@@ -78,3 +78,13 @@ Bash
 
 make
 make load
+
+## References & Acknowledgments
+
+This project bridges the gap between machine learning and bare-metal hardware by leveraging several incredible open-source tools and frameworks. If you are exploring this repository, I highly recommend checking out the documentation for the following projects:
+
+* **[hls4ml](https://fastmachinelearning.org/hls4ml/)**: A Python package for machine learning inference in FPGAs. Used to translate the TensorFlow/Keras neural network into optimized, generic Verilog RTL.
+* **[LiteX](https://github.com/enjoy-digital/litex)**: A highly flexible framework for creating FPGA SoCs. Used to synthesize the gateware, generate the CSR bus, and stitch the AI accelerator to the softcore CPU.
+* **[VexRiscv](https://github.com/SpinalHDL/VexRiscv)**: A 32-bit RISC-V CPU architecture optimized for FPGAs. Acts as the host processor driving the Avalon handshake and embedded C firmware.
+* **[TensorFlow & Keras](https://www.tensorflow.org/)**: The machine learning backend used to train the 16-bit, 32-neuron network.
+* **[The MNIST Database](http://yann.lecun.com/exdb/mnist/)**: The classic dataset of handwritten digits used to train and validate the hardware accelerator.
