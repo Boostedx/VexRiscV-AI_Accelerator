@@ -1,0 +1,70 @@
+Backend: Quartus
+ClockPeriod: 5
+HLSConfig:
+  LayerName:
+    fc1:
+      Precision:
+        accum: auto
+        bias: auto
+        result: auto
+        weight: auto
+      ReuseFactor: 196
+      Strategy: Resource
+      Trace: false
+    fc1_linear:
+      Precision:
+        result: auto
+        table: fixed<18,8,TRN,WRAP,0>
+      ReuseFactor: 1
+      TableSize: 1024
+      Trace: false
+    flatten_1:
+      Precision:
+        result: auto
+      Trace: false
+    input_2:
+      Precision:
+        result: auto
+      Trace: false
+    output:
+      Precision:
+        result: ap_fixed<32,16>
+      ReuseFactor: 32
+      Strategy: Resource
+      Trace: false
+    output_linear:
+      Precision:
+        result: auto
+        table: fixed<18,8,TRN,WRAP,0>
+      ReuseFactor: 1
+      TableSize: 1024
+      Trace: false
+    relu1:
+      Precision:
+        result: auto
+        table: fixed<18,8,TRN,WRAP,0>
+      ReuseFactor: 1
+      TableSize: 1024
+      Trace: false
+      table_size: 256
+      table_t: ap_fixed<16,8>
+  Model:
+    BramFactor: 1000000000
+    Precision:
+      accum: ap_fixed<24,12>
+      default: ap_fixed<16,8>
+      result: ap_fixed<16,8>
+    ReuseFactor: 1
+    Strategy: Latency
+    TraceOutput: false
+IOType: io_parallel
+InputData: null
+KerasModel: !keras_model 'hls4ml_14/keras_model.keras'
+OutputDir: hls4ml_14
+OutputPredictions: null
+Part: CycloneV
+ProjectName: myproject
+Stamp: 51a6356f
+Version: 1.0.0
+WriterConfig:
+  WriteTar: false

@@ -1,0 +1,13 @@
+	component myproject is
+		port (
+			start      : in  std_logic                       := 'X';             -- valid
+			busy       : out std_logic;                                          -- stall
+			clock      : in  std_logic                       := 'X';             -- clk
+			inputs     : in  std_logic_vector(3135 downto 0) := (others => 'X'); -- data
+			resetn     : in  std_logic                       := 'X';             -- reset_n
+			done       : out std_logic;                                          -- valid
+			stall      : in  std_logic                       := 'X';             -- stall
+			returndata : out std_logic_vector(159 downto 0)                      -- data
+		);
+	end component myproject;
+

@@ -1,0 +1,10 @@
+HLS Synthesis Latency & Resource Usage ReportHLS Estimate ALUT:6270
+HLS Estimate FF:17932
+HLS Estimate RAM:28
+HLS Estimate DSP:21
+HLS Estimate MLAB:344
+HLS Estimate ALUT (%):19.1061
+HLS Estimate FF(%):12.0012
+HLS Estimate RAM (%):8.18275
+HLS Estimate DSP (%):5.44747
+HLS Estimate MLAB (%):18.75

@@ -1,0 +1,2193 @@
+{
+  "bottlenecks":
+  [
+    {
+      "name":"'ir'"
+      , "id":4294967295
+      , "src":"26138320"
+      , "dst":"25444016"
+      , "type":"fMAX/II"
+      , "brief":"Data dependency"
+      , "loop":"myproject.B4"
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Variable on critical loop carried feedback path: ":"'ir'"
+          , "Declared at: ":
+          [
+            {
+              "type":"text"
+              , "text":"%L"
+              , "links":
+              [
+                {
+                  "filename":"Unknown location"
+                  , "line":"0"
+                }
+              ]
+            }
+          ]
+          , "Dependency: ":"Data dependency"
+          , "Estimated fmax reduced to: ":"200.0"
+          , "Loop feedback path that lowered II and Fmax: ":
+          [
+            {
+              "type":"text"
+              , "text":"+(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"719"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"+(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"719"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"+(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"719"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"+(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"719"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"+(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"719"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"+(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"719"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"+(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"719"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"+(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"719"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"+(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"719"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"+(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"719"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"+(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+                  , "line":"123"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+      , "nodes":
+      [
+        {
+          "name":"'ir'"
+          , "id":26138320
+          , "start":"2.00"
+          , "parent":"myproject.B4"
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+                , "line":123
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"+"
+          , "id":23573136
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+                , "line":141
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"+"
+          , "id":27669696
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+                , "line":141
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"+"
+          , "id":24428368
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+                , "line":141
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"+"
+          , "id":19533952
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+                , "line":141
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"+"
+          , "id":25082160
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+                , "line":141
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"+"
+          , "id":24937600
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+                , "line":141
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"+"
+          , "id":24733936
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+                , "line":141
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"+"
+          , "id":24156912
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+                , "line":141
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"+"
+          , "id":25316224
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+                , "line":141
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"+"
+          , "id":25764448
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+                , "line":141
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"+"
+          , "id":25742832
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+                , "line":123
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Feedback"
+          , "id":25444016
+          , "end":"3.00"
+          , "parent":"myproject.B4"
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+                , "line":123
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+      ]
+      , "links":
+      [
+        {
+          "from":26138320
+          , "to":25742832
+        }
+        , {
+          "from":25742832
+          , "to":25444016
+        }
+        , {
+          "from":26138320
+          , "to":25444016
+          , "reverse":1
+        }
+      ]
+    }
+    , {
+      "name":"inputs.input_2"
+      , "id":4294967295
+      , "src":"91869392"
+      , "dst":"101873232"
+      , "concurrency":"1"
+      , "type":"Occupancy limiter"
+      , "brief":"Memory dependency"
+      , "loop":"myproject.B1.start"
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Variable on critical loop carried feedback path: ":"inputs.input_2"
+          , "Declared at: ":
+          [
+            {
+              "type":"text"
+              , "text":"%L"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/hls4ml_14/firmware/myproject.cpp"
+                  , "line":"47"
+                }
+              ]
+            }
+          ]
+          , "Dependency: ":"Memory dependency"
+          , "Concurrency value: ":"1"
+          , "Loop feedback path that lowered occupancy: ":
+          [
+            {
+              "type":"text"
+              , "text":"Loop: myproject.B5(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+                  , "line":"123"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+      , "nodes":
+      [
+        {
+          "name":"inputs.input_2"
+          , "id":91869392
+          , "start":"196.00"
+          , "parent":"myproject.B1.start"
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+                , "line":133
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"myproject.B5"
+          , "id":104337856
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+                , "line":123
+              }
+            ]
+          ]
+          , "type":"loop"
+        }
+        , {
+          "name":"Feedback"
+          , "id":101873232
+          , "end":"1.00"
+          , "parent":"myproject.B2"
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+                , "line":133
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+      ]
+      , "links":
+      [
+        {
+          "from":104337856
+          , "to":104337856
+        }
+        , {
+          "from":91869392
+          , "to":104337856
+        }
+        , {
+          "from":104337856
+          , "to":101873232
+        }
+        , {
+          "from":91869392
+          , "to":101873232
+          , "reverse":1
+        }
+      ]
+    }
+    , {
+      "name":"'ir'"
+      , "id":4294967295
+      , "src":"22370080"
+      , "dst":"13683744"
+      , "type":"fMAX/II"
+      , "brief":"Data dependency"
+      , "loop":"myproject.B5"
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Variable on critical loop carried feedback path: ":"'ir'"
+          , "Declared at: ":
+          [
+            {
+              "type":"text"
+              , "text":"%L"
+              , "links":
+              [
+                {
+                  "filename":"Unknown location"
+                  , "line":"0"
+                }
+              ]
+            }
+          ]
+          , "Dependency: ":"Data dependency"
+          , "Estimated fmax reduced to: ":"200.0"
+          , "Loop feedback path that lowered II and Fmax: ":
+          [
+            {
+              "type":"text"
+              , "text":"Trunc(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"718"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"+(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"710"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Trunc(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"718"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"+(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"710"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Trunc(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"718"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"+(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"710"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Trunc(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"718"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"+(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"710"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Trunc(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"718"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"+(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"710"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Trunc(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"718"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"+(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"710"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Trunc(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"718"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"+(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"710"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Trunc(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"718"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"+(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"710"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Trunc(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"718"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"+(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"710"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Trunc(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"718"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"+(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"710"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Trunc(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"718"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"+(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"710"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Trunc(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"718"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"+(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"710"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Trunc(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"718"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"+(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"710"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Trunc(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"718"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"+(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"710"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Trunc(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"718"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"+(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"710"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Trunc(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"718"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"+(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"710"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Trunc(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"718"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"+(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"710"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Trunc(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"718"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"+(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"710"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Trunc(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"718"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"+(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"710"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Trunc(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"718"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"+(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"710"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Trunc(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"718"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"+(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"710"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Trunc(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"718"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"+(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"710"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Trunc(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"718"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"+(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"710"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Trunc(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"718"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"+(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"710"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Trunc(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"718"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"+(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"710"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Trunc(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"718"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"+(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"710"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Trunc(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"718"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"+(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"710"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Trunc(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"718"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"+(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"710"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Trunc(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"718"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"+(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"710"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Trunc(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"718"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"+(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"710"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Trunc(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"718"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"+(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"710"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Trunc(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"718"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"+(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/intelFPGA_pro/24.1/hls/include/HLS/ac_int.h"
+                  , "line":"710"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"+(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+                  , "line":"123"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+      , "nodes":
+      [
+        {
+          "name":"'ir'"
+          , "id":22370080
+          , "start":"2.00"
+          , "parent":"myproject.B5"
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+                , "line":123
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Trunc"
+          , "id":10195328
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+                , "line":141
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"+"
+          , "id":12086768
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_mult.h"
+                , "line":65
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Trunc"
+          , "id":11312480
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+                , "line":141
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"+"
+          , "id":10883600
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_mult.h"
+                , "line":65
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Trunc"
+          , "id":9958400
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+                , "line":141
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"+"
+          , "id":14960528
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_mult.h"
+                , "line":65
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Trunc"
+          , "id":89114464
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+                , "line":141
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"+"
+          , "id":117894256
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_mult.h"
+                , "line":65
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Trunc"
+          , "id":138690368
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+                , "line":141
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"+"
+          , "id":115064208
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_mult.h"
+                , "line":65
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Trunc"
+          , "id":77804464
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+                , "line":141
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"+"
+          , "id":91596608
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_mult.h"
+                , "line":65
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Trunc"
+          , "id":248950000
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+                , "line":141
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"+"
+          , "id":138171904
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_mult.h"
+                , "line":65
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Trunc"
+          , "id":248773968
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+                , "line":141
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"+"
+          , "id":131418208
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_mult.h"
+                , "line":65
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Trunc"
+          , "id":95717632
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+                , "line":141
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"+"
+          , "id":65221456
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_mult.h"
+                , "line":65
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Trunc"
+          , "id":22884160
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+                , "line":141
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"+"
+          , "id":26474608
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_mult.h"
+                , "line":65
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Trunc"
+          , "id":26429840
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+                , "line":141
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"+"
+          , "id":23875456
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_mult.h"
+                , "line":65
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Trunc"
+          , "id":26164912
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+                , "line":141
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"+"
+          , "id":26143440
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_mult.h"
+                , "line":65
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Trunc"
+          , "id":16140304
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+                , "line":141
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"+"
+          , "id":16073200
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_mult.h"
+                , "line":65
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Trunc"
+          , "id":9431184
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+                , "line":141
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"+"
+          , "id":24708768
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_mult.h"
+                , "line":65
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Trunc"
+          , "id":22567040
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+                , "line":141
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"+"
+          , "id":17548240
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_mult.h"
+                , "line":65
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Trunc"
+          , "id":24114944
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+                , "line":141
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"+"
+          , "id":25065200
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_mult.h"
+                , "line":65
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Trunc"
+          , "id":24556240
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+                , "line":141
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"+"
+          , "id":8103712
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_mult.h"
+                , "line":65
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Trunc"
+          , "id":26537264
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+                , "line":141
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"+"
+          , "id":26722576
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_mult.h"
+                , "line":65
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Trunc"
+          , "id":26692528
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+                , "line":141
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"+"
+          , "id":26568048
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_mult.h"
+                , "line":65
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Trunc"
+          , "id":22696608
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+                , "line":141
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"+"
+          , "id":97729120
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_mult.h"
+                , "line":65
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Trunc"
+          , "id":132701856
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+                , "line":141
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"+"
+          , "id":39383456
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_mult.h"
+                , "line":65
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Trunc"
+          , "id":141437072
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+                , "line":141
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"+"
+          , "id":142417120
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_mult.h"
+                , "line":65
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Trunc"
+          , "id":88086192
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+                , "line":141
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"+"
+          , "id":140748848
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_mult.h"
+                , "line":65
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Trunc"
+          , "id":135482736
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+                , "line":141
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"+"
+          , "id":248614080
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_mult.h"
+                , "line":65
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Trunc"
+          , "id":127219056
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+                , "line":141
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"+"
+          , "id":77008032
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_mult.h"
+                , "line":65
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Trunc"
+          , "id":142761616
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+                , "line":141
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"+"
+          , "id":140409344
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_mult.h"
+                , "line":65
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Trunc"
+          , "id":35178608
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+                , "line":141
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"+"
+          , "id":98969632
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_mult.h"
+                , "line":65
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Trunc"
+          , "id":114485088
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+                , "line":141
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"+"
+          , "id":85383120
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_mult.h"
+                , "line":65
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Trunc"
+          , "id":112625552
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+                , "line":141
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"+"
+          , "id":133512816
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_mult.h"
+                , "line":65
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Trunc"
+          , "id":72845744
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+                , "line":141
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"+"
+          , "id":101370448
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_mult.h"
+                , "line":65
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Trunc"
+          , "id":77808912
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+                , "line":141
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"+"
+          , "id":141897776
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_mult.h"
+                , "line":65
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Trunc"
+          , "id":36816000
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+                , "line":141
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"+"
+          , "id":12659696
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_mult.h"
+                , "line":65
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"+"
+          , "id":14106896
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+                , "line":123
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Feedback"
+          , "id":13683744
+          , "end":"3.00"
+          , "parent":"myproject.B5"
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+                , "line":123
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+      ]
+      , "links":
+      [
+        {
+          "from":22370080
+          , "to":14106896
+        }
+        , {
+          "from":14106896
+          , "to":13683744
+        }
+        , {
+          "from":22370080
+          , "to":13683744
+          , "reverse":1
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,4932 @@
+{
+  "4279680160":
+  {
+    "nodes":
+    [
+      {
+        "name":"?"
+        , "id":76958656
+        , "start":"1.00"
+        , "end":"2.00"
+        , "subtype":"pop"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Read"
+            , "Variable":"Unknown variable"
+            , "Start Cycle":"1"
+            , "Latency":"1"
+          }
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Feedback"
+        , "id":81034016
+        , "start":"1.00"
+        , "end":"2.00"
+        , "subtype":"push"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Write"
+            , "Variable":"Unknown variable"
+            , "Feedback FIFO Depth":"1"
+            , "Feedback FIFO Width":"1"
+            , "Start Cycle":"1"
+            , "Latency":"1"
+          }
+        ]
+        , "type":"inst"
+      }
+    ]
+    , "links":
+    [
+      {
+        "from":81034016
+        , "to":76958656
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+    ]
+  }
+  , "4279680512":
+  {
+    "nodes":
+    [
+      {
+        "name":"Cluster 3"
+        , "id":4283601888
+        , "start":"1.00"
+        , "end":"14.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Cluster Name":"i_sfc_s_c0_in_cleanup_i_i114_31_myprojects_c0_enter24346_myproject1"
+            , "Cluster Type":"Stall-Free"
+            , "Cluster Start Cycle":"1"
+            , "Cluster Latency":"13"
+          }
+        ]
+        , "type":"cluster"
+        , "children":
+        [
+          {
+            "name":"Logic"
+            , "id":9308544
+            , "subtype":"entry"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Cluster Logic Start Cycle":"1"
+                , "Cluster Logic Latency":"10"
+              }
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"Exit"
+            , "id":12602256
+            , "subtype":"exit"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Start Cycle":"11"
+                , "Latency":"3"
+                , "Exit FIFO Depth":"32"
+                , "Exit FIFO Width":"2176"
+                , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+              }
+            ]
+            , "type":"inst"
+          }
+        ]
+      }
+      , {
+        "name":"Loop Input"
+        , "id":88036720
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Loop Input"
+            , "Preceding Blocks":"myproject.B5, myproject.B1.start"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+              , "line":123
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+    ]
+    , "links":
+    [
+      {
+        "from":9308544
+        , "to":12602256
+      }
+      , {
+        "from":88036720
+        , "to":9308544
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+    ]
+  }
+  , "4279683504":
+  {
+    "nodes":
+    [
+      {
+        "name":"Cluster 0"
+        , "id":4283763488
+        , "start":"1.00"
+        , "end":"196.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Cluster Name":"i_sfc_s_c0_in_wt_entry_myprojects_c0_enter45_myproject1"
+            , "Cluster Type":"Stall-Enable"
+            , "Cluster Start Cycle":"1"
+            , "Cluster Latency":"195"
+          }
+        ]
+        , "type":"cluster"
+        , "children":
+        [
+          {
+            "name":"Logic"
+            , "id":4287523776
+            , "subtype":"entry"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Cluster Logic Start Cycle":"1"
+                , "Cluster Logic Latency":"195"
+              }
+            ]
+            , "type":"inst"
+          }
+        ]
+      }
+      , {
+        "name":"Cluster 1"
+        , "id":4283764128
+        , "start":"197.00"
+        , "end":"202.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Cluster Name":"i_sfc_s_c1_in_wt_entry_myprojects_c1_enter_myproject6"
+            , "Cluster Type":"Stall-Free"
+            , "Cluster Start Cycle":"197"
+            , "Cluster Latency":"5"
+          }
+        ]
+        , "type":"cluster"
+        , "children":
+        [
+          {
+            "name":"Logic"
+            , "id":4289597984
+            , "subtype":"entry"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Cluster Logic Start Cycle":"197"
+                , "Cluster Logic Latency":"2"
+              }
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"Exit"
+            , "id":4281009728
+            , "subtype":"exit"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Start Cycle":"199"
+                , "Latency":"3"
+                , "Exit FIFO Depth":"32"
+                , "Exit FIFO Width":"8"
+                , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+              }
+            ]
+            , "type":"inst"
+          }
+        ]
+      }
+      , {
+        "name":"Loop Input"
+        , "id":25317216
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Loop Input"
+            , "Preceding Blocks":"myproject.B3, myproject.B0.runOnce"
+          }
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"inputs.input_2"
+        , "id":91869392
+        , "start":"196.00"
+        , "end":"197.00"
+        , "subtype":"pop"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Read"
+            , "Variable":"inputs.input_2"
+            , "Start Cycle":"196"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+              , "line":133
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"RD"
+        , "id":101400816
+        , "start":"197.00"
+        , "end":"197.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Stream Read"
+            , "Width":"3136 bits"
+            , "Depth":"0"
+            , "Stream Name":"call.myproject"
+            , "Stall-free":"No"
+            , "Start Cycle":"197"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/myproject.cpp"
+              , "line":46
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+    ]
+    , "links":
+    [
+      {
+        "from":4289597984
+        , "to":4281009728
+      }
+      , {
+        "from":25317216
+        , "to":4287523776
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":91869392
+        , "to":4289597984
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4287523776
+        , "to":91869392
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"24"
+          }
+        ]
+      }
+      , {
+        "from":101400816
+        , "to":4289597984
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"3136"
+          }
+        ]
+      }
+    ]
+  }
+  , "4279683584":
+  {
+    "nodes":
+    [
+      {
+        "name":">>"
+        , "id":7617040
+        , "start":"1.00"
+        , "end":"1.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Logical Right Shift"
+            , "Constant Operand":"8 (0x8)"
+            , "Start Cycle":"1"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Compare"
+        , "id":9043072
+        , "start":"1.00"
+        , "end":"2.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Integer Compare"
+            , "Start Cycle":"1"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Select"
+        , "id":9045120
+        , "start":"2.00"
+        , "end":"2.00"
+        , "subtype":"select"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"16-bit Select"
+            , "Start Cycle":"2"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":">>"
+        , "id":9049216
+        , "start":"1.00"
+        , "end":"1.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Logical Right Shift"
+            , "Constant Operand":"8 (0x8)"
+            , "Start Cycle":"1"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Compare"
+        , "id":9051264
+        , "start":"1.00"
+        , "end":"2.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Integer Compare"
+            , "Start Cycle":"1"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Select"
+        , "id":9053312
+        , "start":"2.00"
+        , "end":"2.00"
+        , "subtype":"select"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"16-bit Select"
+            , "Start Cycle":"2"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":">>"
+        , "id":9057408
+        , "start":"1.00"
+        , "end":"1.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Logical Right Shift"
+            , "Constant Operand":"8 (0x8)"
+            , "Start Cycle":"1"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Compare"
+        , "id":9059456
+        , "start":"1.00"
+        , "end":"2.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Integer Compare"
+            , "Start Cycle":"1"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Select"
+        , "id":9061504
+        , "start":"2.00"
+        , "end":"2.00"
+        , "subtype":"select"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"16-bit Select"
+            , "Start Cycle":"2"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":">>"
+        , "id":9065600
+        , "start":"1.00"
+        , "end":"1.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Logical Right Shift"
+            , "Constant Operand":"8 (0x8)"
+            , "Start Cycle":"1"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Compare"
+        , "id":9067648
+        , "start":"1.00"
+        , "end":"2.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Integer Compare"
+            , "Start Cycle":"1"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Select"
+        , "id":9069696
+        , "start":"2.00"
+        , "end":"2.00"
+        , "subtype":"select"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"16-bit Select"
+            , "Start Cycle":"2"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":">>"
+        , "id":9073792
+        , "start":"1.00"
+        , "end":"1.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Logical Right Shift"
+            , "Constant Operand":"8 (0x8)"
+            , "Start Cycle":"1"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Compare"
+        , "id":9077600
+        , "start":"1.00"
+        , "end":"2.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Integer Compare"
+            , "Start Cycle":"1"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Select"
+        , "id":9079648
+        , "start":"2.00"
+        , "end":"2.00"
+        , "subtype":"select"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"16-bit Select"
+            , "Start Cycle":"2"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":">>"
+        , "id":9083744
+        , "start":"1.00"
+        , "end":"1.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Logical Right Shift"
+            , "Constant Operand":"8 (0x8)"
+            , "Start Cycle":"1"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Compare"
+        , "id":9085792
+        , "start":"1.00"
+        , "end":"2.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Integer Compare"
+            , "Start Cycle":"1"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Select"
+        , "id":9087840
+        , "start":"2.00"
+        , "end":"2.00"
+        , "subtype":"select"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"16-bit Select"
+            , "Start Cycle":"2"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":">>"
+        , "id":9091936
+        , "start":"1.00"
+        , "end":"1.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Logical Right Shift"
+            , "Constant Operand":"8 (0x8)"
+            , "Start Cycle":"1"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Compare"
+        , "id":9093984
+        , "start":"1.00"
+        , "end":"2.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Integer Compare"
+            , "Start Cycle":"1"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Select"
+        , "id":9096032
+        , "start":"2.00"
+        , "end":"2.00"
+        , "subtype":"select"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"16-bit Select"
+            , "Start Cycle":"2"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":">>"
+        , "id":9100128
+        , "start":"1.00"
+        , "end":"1.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Logical Right Shift"
+            , "Constant Operand":"8 (0x8)"
+            , "Start Cycle":"1"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Compare"
+        , "id":9102176
+        , "start":"1.00"
+        , "end":"2.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Integer Compare"
+            , "Start Cycle":"1"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Select"
+        , "id":9104224
+        , "start":"2.00"
+        , "end":"2.00"
+        , "subtype":"select"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"16-bit Select"
+            , "Start Cycle":"2"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":">>"
+        , "id":9108320
+        , "start":"1.00"
+        , "end":"1.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Logical Right Shift"
+            , "Constant Operand":"8 (0x8)"
+            , "Start Cycle":"1"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Input"
+        , "id":11122560
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Input"
+            , "Preceding Blocks":"myproject.B5"
+          }
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":">>"
+        , "id":15198352
+        , "start":"1.00"
+        , "end":"1.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Logical Right Shift"
+            , "Constant Operand":"8 (0x8)"
+            , "Start Cycle":"1"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Compare"
+        , "id":15743424
+        , "start":"1.00"
+        , "end":"2.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Integer Compare"
+            , "Start Cycle":"1"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Select"
+        , "id":15790016
+        , "start":"2.00"
+        , "end":"2.00"
+        , "subtype":"select"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"16-bit Select"
+            , "Start Cycle":"2"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Compare"
+        , "id":16775040
+        , "start":"1.00"
+        , "end":"2.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Integer Compare"
+            , "Start Cycle":"1"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":">>"
+        , "id":16933792
+        , "start":"1.00"
+        , "end":"1.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Logical Right Shift"
+            , "Constant Operand":"8 (0x8)"
+            , "Start Cycle":"1"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Select"
+        , "id":17072560
+        , "start":"2.00"
+        , "end":"2.00"
+        , "subtype":"select"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"16-bit Select"
+            , "Start Cycle":"2"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":">>"
+        , "id":17264160
+        , "start":"1.00"
+        , "end":"1.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Logical Right Shift"
+            , "Constant Operand":"8 (0x8)"
+            , "Start Cycle":"1"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Compare"
+        , "id":17280640
+        , "start":"1.00"
+        , "end":"2.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Integer Compare"
+            , "Start Cycle":"1"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Select"
+        , "id":17297216
+        , "start":"2.00"
+        , "end":"2.00"
+        , "subtype":"select"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"16-bit Select"
+            , "Start Cycle":"2"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":">>"
+        , "id":17330368
+        , "start":"1.00"
+        , "end":"1.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Logical Right Shift"
+            , "Constant Operand":"8 (0x8)"
+            , "Start Cycle":"1"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Compare"
+        , "id":17346944
+        , "start":"1.00"
+        , "end":"2.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Integer Compare"
+            , "Start Cycle":"1"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Select"
+        , "id":17363424
+        , "start":"2.00"
+        , "end":"2.00"
+        , "subtype":"select"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"16-bit Select"
+            , "Start Cycle":"2"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Select"
+        , "id":17376688
+        , "start":"2.00"
+        , "end":"2.00"
+        , "subtype":"select"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"16-bit Select"
+            , "Start Cycle":"2"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":">>"
+        , "id":17380000
+        , "start":"1.00"
+        , "end":"1.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Logical Right Shift"
+            , "Constant Operand":"8 (0x8)"
+            , "Start Cycle":"1"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Compare"
+        , "id":17396576
+        , "start":"1.00"
+        , "end":"2.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Integer Compare"
+            , "Start Cycle":"1"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Compare"
+        , "id":17447184
+        , "start":"1.00"
+        , "end":"2.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Integer Compare"
+            , "Start Cycle":"1"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":">>"
+        , "id":17454768
+        , "start":"1.00"
+        , "end":"1.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Logical Right Shift"
+            , "Constant Operand":"8 (0x8)"
+            , "Start Cycle":"1"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":">>"
+        , "id":17457936
+        , "start":"1.00"
+        , "end":"1.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Logical Right Shift"
+            , "Constant Operand":"8 (0x8)"
+            , "Start Cycle":"1"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Select"
+        , "id":17479760
+        , "start":"2.00"
+        , "end":"2.00"
+        , "subtype":"select"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"16-bit Select"
+            , "Start Cycle":"2"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Select"
+        , "id":17498272
+        , "start":"2.00"
+        , "end":"2.00"
+        , "subtype":"select"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"16-bit Select"
+            , "Start Cycle":"2"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":">>"
+        , "id":17501584
+        , "start":"1.00"
+        , "end":"1.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Logical Right Shift"
+            , "Constant Operand":"8 (0x8)"
+            , "Start Cycle":"1"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Compare"
+        , "id":17512496
+        , "start":"1.00"
+        , "end":"2.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Integer Compare"
+            , "Start Cycle":"1"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Select"
+        , "id":17523408
+        , "start":"2.00"
+        , "end":"2.00"
+        , "subtype":"select"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"16-bit Select"
+            , "Start Cycle":"2"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":">>"
+        , "id":17545232
+        , "start":"1.00"
+        , "end":"1.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Logical Right Shift"
+            , "Constant Operand":"8 (0x8)"
+            , "Start Cycle":"1"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Select"
+        , "id":17556144
+        , "start":"2.00"
+        , "end":"2.00"
+        , "subtype":"select"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"16-bit Select"
+            , "Start Cycle":"2"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":">>"
+        , "id":17577968
+        , "start":"1.00"
+        , "end":"1.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Logical Right Shift"
+            , "Constant Operand":"8 (0x8)"
+            , "Start Cycle":"1"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Compare"
+        , "id":17588880
+        , "start":"1.00"
+        , "end":"2.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Integer Compare"
+            , "Start Cycle":"1"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Select"
+        , "id":17599792
+        , "start":"2.00"
+        , "end":"2.00"
+        , "subtype":"select"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"16-bit Select"
+            , "Start Cycle":"2"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Select"
+        , "id":17607392
+        , "start":"2.00"
+        , "end":"2.00"
+        , "subtype":"select"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"16-bit Select"
+            , "Start Cycle":"2"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":">>"
+        , "id":17621616
+        , "start":"1.00"
+        , "end":"1.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Logical Right Shift"
+            , "Constant Operand":"8 (0x8)"
+            , "Start Cycle":"1"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Compare"
+        , "id":17632528
+        , "start":"1.00"
+        , "end":"2.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Integer Compare"
+            , "Start Cycle":"1"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Select"
+        , "id":17643440
+        , "start":"2.00"
+        , "end":"2.00"
+        , "subtype":"select"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"16-bit Select"
+            , "Start Cycle":"2"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Compare"
+        , "id":17661952
+        , "start":"1.00"
+        , "end":"2.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Integer Compare"
+            , "Start Cycle":"1"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Compare"
+        , "id":17665264
+        , "start":"1.00"
+        , "end":"2.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Integer Compare"
+            , "Start Cycle":"1"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Select"
+        , "id":17676176
+        , "start":"2.00"
+        , "end":"2.00"
+        , "subtype":"select"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"16-bit Select"
+            , "Start Cycle":"2"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":">>"
+        , "id":17698000
+        , "start":"1.00"
+        , "end":"1.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Logical Right Shift"
+            , "Constant Operand":"8 (0x8)"
+            , "Start Cycle":"1"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Compare"
+        , "id":17708848
+        , "start":"1.00"
+        , "end":"2.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Integer Compare"
+            , "Start Cycle":"1"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Select"
+        , "id":17719808
+        , "start":"2.00"
+        , "end":"2.00"
+        , "subtype":"select"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"16-bit Select"
+            , "Start Cycle":"2"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":">>"
+        , "id":17741728
+        , "start":"1.00"
+        , "end":"1.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Logical Right Shift"
+            , "Constant Operand":"8 (0x8)"
+            , "Start Cycle":"1"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Compare"
+        , "id":17752688
+        , "start":"1.00"
+        , "end":"2.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Integer Compare"
+            , "Start Cycle":"1"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Select"
+        , "id":17763648
+        , "start":"2.00"
+        , "end":"2.00"
+        , "subtype":"select"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"16-bit Select"
+            , "Start Cycle":"2"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":">>"
+        , "id":17774608
+        , "start":"1.00"
+        , "end":"1.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Logical Right Shift"
+            , "Constant Operand":"8 (0x8)"
+            , "Start Cycle":"1"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Compare"
+        , "id":17785568
+        , "start":"1.00"
+        , "end":"2.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Integer Compare"
+            , "Start Cycle":"1"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":">>"
+        , "id":17987632
+        , "start":"1.00"
+        , "end":"1.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Logical Right Shift"
+            , "Constant Operand":"8 (0x8)"
+            , "Start Cycle":"1"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Select"
+        , "id":18227248
+        , "start":"2.00"
+        , "end":"2.00"
+        , "subtype":"select"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"16-bit Select"
+            , "Start Cycle":"2"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Compare"
+        , "id":18249040
+        , "start":"1.00"
+        , "end":"2.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Integer Compare"
+            , "Start Cycle":"1"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Select"
+        , "id":18252672
+        , "start":"2.00"
+        , "end":"2.00"
+        , "subtype":"select"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"16-bit Select"
+            , "Start Cycle":"2"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":">>"
+        , "id":18267200
+        , "start":"1.00"
+        , "end":"1.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Logical Right Shift"
+            , "Constant Operand":"8 (0x8)"
+            , "Start Cycle":"1"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Compare"
+        , "id":18270832
+        , "start":"1.00"
+        , "end":"2.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Integer Compare"
+            , "Start Cycle":"1"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Select"
+        , "id":18278096
+        , "start":"2.00"
+        , "end":"2.00"
+        , "subtype":"select"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"16-bit Select"
+            , "Start Cycle":"2"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":">>"
+        , "id":18285360
+        , "start":"1.00"
+        , "end":"1.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Logical Right Shift"
+            , "Constant Operand":"8 (0x8)"
+            , "Start Cycle":"1"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Compare"
+        , "id":18288992
+        , "start":"1.00"
+        , "end":"2.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Integer Compare"
+            , "Start Cycle":"1"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Select"
+        , "id":18292624
+        , "start":"2.00"
+        , "end":"2.00"
+        , "subtype":"select"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"16-bit Select"
+            , "Start Cycle":"2"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":">>"
+        , "id":18299888
+        , "start":"1.00"
+        , "end":"1.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Logical Right Shift"
+            , "Constant Operand":"8 (0x8)"
+            , "Start Cycle":"1"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Compare"
+        , "id":18303520
+        , "start":"1.00"
+        , "end":"2.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Integer Compare"
+            , "Start Cycle":"1"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Compare"
+        , "id":27057120
+        , "start":"1.00"
+        , "end":"2.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Integer Compare"
+            , "Start Cycle":"1"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":">>"
+        , "id":28479824
+        , "start":"1.00"
+        , "end":"1.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Logical Right Shift"
+            , "Constant Operand":"8 (0x8)"
+            , "Start Cycle":"1"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Select"
+        , "id":29342016
+        , "start":"2.00"
+        , "end":"2.00"
+        , "subtype":"select"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"16-bit Select"
+            , "Start Cycle":"2"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Select"
+        , "id":76109968
+        , "start":"2.00"
+        , "end":"2.00"
+        , "subtype":"select"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"16-bit Select"
+            , "Start Cycle":"2"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Compare"
+        , "id":77721168
+        , "start":"1.00"
+        , "end":"2.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Integer Compare"
+            , "Start Cycle":"1"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Compare"
+        , "id":101309824
+        , "start":"1.00"
+        , "end":"2.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Integer Compare"
+            , "Start Cycle":"1"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Feedback"
+        , "id":101873232
+        , "start":"0.00"
+        , "end":"1.00"
+        , "subtype":"push"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Write"
+            , "Variable":"inputs.input_2"
+            , "Feedback FIFO Depth":"198"
+            , "Feedback FIFO Width":"1"
+            , "Start Cycle":"0"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+              , "line":133
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":">>"
+        , "id":102534736
+        , "start":"1.00"
+        , "end":"1.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Logical Right Shift"
+            , "Constant Operand":"8 (0x8)"
+            , "Start Cycle":"1"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Select"
+        , "id":102661888
+        , "start":"2.00"
+        , "end":"2.00"
+        , "subtype":"select"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"16-bit Select"
+            , "Start Cycle":"2"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":">>"
+        , "id":104020896
+        , "start":"1.00"
+        , "end":"1.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Logical Right Shift"
+            , "Constant Operand":"8 (0x8)"
+            , "Start Cycle":"1"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":">>"
+        , "id":119745520
+        , "start":"1.00"
+        , "end":"1.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Logical Right Shift"
+            , "Constant Operand":"8 (0x8)"
+            , "Start Cycle":"1"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Select"
+        , "id":137220192
+        , "start":"2.00"
+        , "end":"2.00"
+        , "subtype":"select"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"16-bit Select"
+            , "Start Cycle":"2"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Compare"
+        , "id":137804384
+        , "start":"1.00"
+        , "end":"2.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Integer Compare"
+            , "Start Cycle":"1"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Compare"
+        , "id":249929824
+        , "start":"1.00"
+        , "end":"2.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"41-bit Integer Compare"
+            , "Start Cycle":"1"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+    ]
+    , "links":
+    [
+      {
+        "from":7617040
+        , "to":18227248
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":9043072
+        , "to":17498272
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":9049216
+        , "to":9045120
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":9051264
+        , "to":9045120
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":9057408
+        , "to":9053312
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":9059456
+        , "to":9053312
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":9065600
+        , "to":9061504
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":9067648
+        , "to":9061504
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":9073792
+        , "to":9069696
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":9077600
+        , "to":9069696
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":9083744
+        , "to":9079648
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":9085792
+        , "to":9079648
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":9091936
+        , "to":9087840
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":9093984
+        , "to":9087840
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":9100128
+        , "to":9096032
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":9102176
+        , "to":9096032
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":9108320
+        , "to":9104224
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":17330368
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":17346944
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":15198352
+        , "to":17376688
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":15743424
+        , "to":9104224
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":15198352
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":27057120
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":16775040
+        , "to":18227248
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":16933792
+        , "to":17498272
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":17264160
+        , "to":15790016
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":17280640
+        , "to":15790016
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":17330368
+        , "to":17297216
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":17346944
+        , "to":17297216
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":17380000
+        , "to":17363424
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":17396576
+        , "to":17363424
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":17447184
+        , "to":17523408
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":17454768
+        , "to":17607392
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":17457936
+        , "to":17643440
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":17501584
+        , "to":17479760
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":17512496
+        , "to":17479760
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":17545232
+        , "to":17523408
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":17577968
+        , "to":17556144
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":17588880
+        , "to":17556144
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":17621616
+        , "to":17599792
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":17632528
+        , "to":17599792
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":17661952
+        , "to":17607392
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":17665264
+        , "to":17643440
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":17698000
+        , "to":17676176
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":17708848
+        , "to":17676176
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":17741728
+        , "to":17719808
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":17752688
+        , "to":17719808
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":17774608
+        , "to":17763648
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":17785568
+        , "to":17763648
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":17987632
+        , "to":29342016
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":18249040
+        , "to":29342016
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":18267200
+        , "to":18252672
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":18270832
+        , "to":18252672
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":18285360
+        , "to":18278096
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":18288992
+        , "to":18278096
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":18299888
+        , "to":18292624
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":18303520
+        , "to":18292624
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":28479824
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":77721168
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":104020896
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":137804384
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":18299888
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":18303520
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":17987632
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":18249040
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":101309824
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":119745520
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":102534736
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":249929824
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":27057120
+        , "to":17376688
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":28479824
+        , "to":17072560
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":7617040
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":16775040
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":9083744
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":9085792
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":17577968
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":17588880
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":77721168
+        , "to":17072560
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":9057408
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":9059456
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":9065600
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":9067648
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":17447184
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":17545232
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":17621616
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":17632528
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":17380000
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":17396576
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":9043072
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":16933792
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":101309824
+        , "to":102661888
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":17501584
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":17512496
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":17457936
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":17665264
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":18285360
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":18288992
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":102534736
+        , "to":137220192
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":104020896
+        , "to":76109968
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":9091936
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":9093984
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":18267200
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":18270832
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":17454768
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":17661952
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":17264160
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":17280640
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":119745520
+        , "to":102661888
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":9049216
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":9051264
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":17774608
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":17785568
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":17741728
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":17752688
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":9073792
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":9077600
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":17698000
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":17708848
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":137804384
+        , "to":76109968
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":9108320
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":15743424
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":9100128
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":11122560
+        , "to":9102176
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":249929824
+        , "to":137220192
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+    ]
+  }
+  , "4279683664":
+  {
+    "nodes":
+    [
+      {
+        "name":"WR"
+        , "id":14989072
+        , "start":"0.00"
+        , "end":"0.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Stream Write"
+            , "Width":"160 bits"
+            , "Depth":"0"
+            , "Stream Name":"return.myproject"
+            , "Stall-free":"No"
+            , "Start Cycle":"0"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/myproject.cpp"
+              , "line":76
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":">>"
+        , "id":15075104
+        , "start":"0.00"
+        , "end":"0.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"24-bit Logical Right Shift"
+            , "Constant Operand":"4 (0x4)"
+            , "Start Cycle":"0"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":30
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":">>"
+        , "id":15079200
+        , "start":"0.00"
+        , "end":"0.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"24-bit Logical Right Shift"
+            , "Constant Operand":"4 (0x4)"
+            , "Start Cycle":"0"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":30
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":">>"
+        , "id":15083296
+        , "start":"0.00"
+        , "end":"0.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"24-bit Logical Right Shift"
+            , "Constant Operand":"4 (0x4)"
+            , "Start Cycle":"0"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":30
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":">>"
+        , "id":15087392
+        , "start":"0.00"
+        , "end":"0.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"24-bit Logical Right Shift"
+            , "Constant Operand":"4 (0x4)"
+            , "Start Cycle":"0"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":30
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":">>"
+        , "id":15091488
+        , "start":"0.00"
+        , "end":"0.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"24-bit Logical Right Shift"
+            , "Constant Operand":"4 (0x4)"
+            , "Start Cycle":"0"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":30
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":">>"
+        , "id":15095584
+        , "start":"0.00"
+        , "end":"0.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"24-bit Logical Right Shift"
+            , "Constant Operand":"4 (0x4)"
+            , "Start Cycle":"0"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":30
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":">>"
+        , "id":15099680
+        , "start":"0.00"
+        , "end":"0.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"24-bit Logical Right Shift"
+            , "Constant Operand":"4 (0x4)"
+            , "Start Cycle":"0"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":30
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":">>"
+        , "id":15103776
+        , "start":"0.00"
+        , "end":"0.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"24-bit Logical Right Shift"
+            , "Constant Operand":"4 (0x4)"
+            , "Start Cycle":"0"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":30
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":">>"
+        , "id":15109632
+        , "start":"0.00"
+        , "end":"0.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"24-bit Logical Right Shift"
+            , "Constant Operand":"4 (0x4)"
+            , "Start Cycle":"0"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":30
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":">>"
+        , "id":15113728
+        , "start":"0.00"
+        , "end":"0.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"24-bit Logical Right Shift"
+            , "Constant Operand":"4 (0x4)"
+            , "Start Cycle":"0"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_activation.h"
+              , "line":30
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Input"
+        , "id":32779872
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Input"
+            , "Preceding Blocks":"myproject.B4"
+          }
+        ]
+        , "type":"inst"
+      }
+    ]
+    , "links":
+    [
+      {
+        "from":15075104
+        , "to":14989072
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"24"
+          }
+        ]
+      }
+      , {
+        "from":15079200
+        , "to":14989072
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"24"
+          }
+        ]
+      }
+      , {
+        "from":15083296
+        , "to":14989072
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"24"
+          }
+        ]
+      }
+      , {
+        "from":15087392
+        , "to":14989072
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"24"
+          }
+        ]
+      }
+      , {
+        "from":15091488
+        , "to":14989072
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"24"
+          }
+        ]
+      }
+      , {
+        "from":15095584
+        , "to":14989072
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"24"
+          }
+        ]
+      }
+      , {
+        "from":15099680
+        , "to":14989072
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"24"
+          }
+        ]
+      }
+      , {
+        "from":15103776
+        , "to":14989072
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"24"
+          }
+        ]
+      }
+      , {
+        "from":15109632
+        , "to":14989072
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"24"
+          }
+        ]
+      }
+      , {
+        "from":15113728
+        , "to":14989072
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"24"
+          }
+        ]
+      }
+      , {
+        "from":32779872
+        , "to":15103776
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"24"
+          }
+        ]
+      }
+      , {
+        "from":32779872
+        , "to":15099680
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"24"
+          }
+        ]
+      }
+      , {
+        "from":32779872
+        , "to":15079200
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"24"
+          }
+        ]
+      }
+      , {
+        "from":32779872
+        , "to":15075104
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"24"
+          }
+        ]
+      }
+      , {
+        "from":32779872
+        , "to":15091488
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"24"
+          }
+        ]
+      }
+      , {
+        "from":32779872
+        , "to":15113728
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"24"
+          }
+        ]
+      }
+      , {
+        "from":32779872
+        , "to":15083296
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"24"
+          }
+        ]
+      }
+      , {
+        "from":32779872
+        , "to":15109632
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"24"
+          }
+        ]
+      }
+      , {
+        "from":32779872
+        , "to":15095584
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"24"
+          }
+        ]
+      }
+      , {
+        "from":32779872
+        , "to":15087392
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"24"
+          }
+        ]
+      }
+    ]
+  }
+  , "4279683744":
+  {
+    "nodes":
+    [
+      {
+        "name":"Cluster 2"
+        , "id":4283764768
+        , "start":"1.00"
+        , "end":"12.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Cluster Name":"i_sfc_s_c0_in_cleanup_i_i_9_myprojects_c0_enter23547_myproject1"
+            , "Cluster Type":"Stall-Free"
+            , "Cluster Start Cycle":"1"
+            , "Cluster Latency":"11"
+          }
+        ]
+        , "type":"cluster"
+        , "children":
+        [
+          {
+            "name":"Logic"
+            , "id":7251312
+            , "subtype":"entry"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Cluster Logic Start Cycle":"1"
+                , "Cluster Logic Latency":"8"
+              }
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"Exit"
+            , "id":9028144
+            , "subtype":"exit"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Start Cycle":"9"
+                , "Latency":"3"
+                , "Exit FIFO Depth":"32"
+                , "Exit FIFO Width":"384"
+                , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+              }
+            ]
+            , "type":"inst"
+          }
+        ]
+      }
+      , {
+        "name":"Loop Input"
+        , "id":41409408
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Loop Input"
+            , "Preceding Blocks":"myproject.B4, myproject.B2"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/renz/hls4ml_14/firmware/nnet_utils/nnet_dense.h"
+              , "line":123
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+    ]
+    , "links":
+    [
+      {
+        "from":7251312
+        , "to":9028144
+      }
+      , {
+        "from":41409408
+        , "to":7251312
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":41409408
+        , "to":7251312
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"41"
+          }
+        ]
+      }
+      , {
+        "from":41409408
+        , "to":7251312
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"112"
+          }
+        ]
+      }
+      , {
+        "from":41409408
+        , "to":7251312
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"128"
+          }
+        ]
+      }
+      , {
+        "from":41409408
+        , "to":7251312
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"128"
+          }
+        ]
+      }
+      , {
+        "from":41409408
+        , "to":7251312
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"128"
+          }
+        ]
+      }
+    ]
+  }
+}

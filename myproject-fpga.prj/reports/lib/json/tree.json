@@ -1,0 +1,75 @@
+{
+  "nodes":
+  [
+    {
+      "name":"myproject"
+      , "id":4278726184
+      , "type":"component"
+      , "children":
+      [
+        {
+          "name":"myproject.B4"
+          , "id":4279683744
+          , "type":"bb"
+          , "children":
+          [
+            {
+              "name":"Cluster 2"
+              , "id":4283764768
+              , "type":"cluster"
+            }
+          ]
+        }
+        , {
+          "name":"myproject.B0.runOnce"
+          , "id":4279680160
+          , "type":"bb"
+        }
+        , {
+          "name":"myproject.B2"
+          , "id":4279683584
+          , "type":"bb"
+        }
+        , {
+          "name":"myproject.B1.start"
+          , "id":4279683504
+          , "type":"bb"
+          , "children":
+          [
+            {
+              "name":"Cluster 0"
+              , "id":4283763488
+              , "type":"cluster"
+            }
+            , {
+              "name":"Cluster 1"
+              , "id":4283764128
+              , "type":"cluster"
+            }
+          ]
+        }
+        , {
+          "name":"myproject.B5"
+          , "id":4279680512
+          , "type":"bb"
+          , "children":
+          [
+            {
+              "name":"Cluster 3"
+              , "id":4283601888
+              , "type":"cluster"
+            }
+          ]
+        }
+        , {
+          "name":"myproject.B3"
+          , "id":4279683664
+          , "type":"bb"
+        }
+      ]
+    }
+  ]
+  , "links":
+  [
+  ]
+}

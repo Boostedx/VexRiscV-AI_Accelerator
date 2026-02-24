@@ -1,0 +1,1 @@
+var infoJSON={"compileInfo":{"nodes":[{"command":"i++ -v -v -march=CycloneV --time quartus-hlssynt.log myproject_test.cpp firmware/myproject.cpp -o myproject-fpga","family":"CycloneV, 5CGXFC7C7F23C8","id":1,"name":"./myproject-fpga","product":"HLS","quartus":"20.1.0 Build 711 Standard","time":"Sun Feb 22 01:30:25 2026","version":"24.1.0 Build 115.1"}]}};
