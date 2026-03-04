@@ -1,6 +1,7 @@
 import numpy as np
 import tensorflow as tf
 from tensorflow.keras.datasets import mnist
+import random
 
 # 1. Load the real MNIST test dataset
 (_, _), (x_test, y_test) = mnist.load_data()
@@ -8,11 +9,14 @@ from tensorflow.keras.datasets import mnist
 print("const uint32_t digits[10][28] = {")
 
 for digit_to_find in range(10):
-    # Find the very first occurrence of this digit in the test set
-    idx = np.where(y_test == digit_to_find)[0][0]
+    # Find ALL occurrences of this digit in the test set
+    all_indices = np.where(y_test == digit_to_find)[0]
+    
+    # Pick a RANDOM occurrence instead of the very first one
+    idx = random.choice(all_indices)
     image = x_test[idx]
     
-    print(f"    // Real MNIST Digit {digit_to_find}")
+    print(f"    // Real MNIST Digit {digit_to_find} (Randomized Index: {idx})")
     print("    {", end="")
     
     for y in range(28):
