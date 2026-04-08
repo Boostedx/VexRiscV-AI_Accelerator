@@ -19,27 +19,49 @@ The system consists of a highly optimized Python-trained neural network that has
 ## System Block Diagram
 
 ```mermaid
-graph TD
-    subgraph Software["Software Context"]
-        A[MNIST 28x28 Image Array] -->|Software| B[2x2 Max Pooling Algorithm]
-        B -->|Software| C[14x14 Binarized Image]
-        C -->|Memory Mapped Write| D[CSR Hardware Driver]
-    end
+flowchart TD
+    classDef bus fill:#e0b0ff,stroke:#333,stroke-width:4px,color:#000
+    classDef cpu fill:#aec6cf,stroke:#333,stroke-width:2px,color:#000
+    classDef mem fill:#d3d3d3,stroke:#333,stroke-width:2px,color:#000
+    classDef custom fill:#77dd77,stroke:#333,stroke-width:2px,color:#000
+    classDef bridge fill:#ffb347,stroke:#333,stroke-width:2px,color:#000
 
-    subgraph Hardware["Generic Hardware AI IP (Verilog)"]
-        F[Control Logic: Start, Stall, Done] --> G[Input Registers: 98 x 32-bit]
-        G --> H[AI Core: 32-Neuron Hidden Layer]
-        H --> I[AI Core: 10-Class Output]
-        I --> J[Output Registers: 10 x 32-bit]
-    end
+    subgraph FPGA["Cyclone V FPGA (LiteX Soft SoC)"]
+        direction TB
 
-    subgraph SoC["System SoC"]
-        E[Generic CPU e.g., RISC-V] <-->|System Bus / CSR Interface| F
-        D -->|Bus Interface| E
-        J -->|Memory Mapped Read| E
+        %% Peripherals & Memory
+        SDRAM["SDRAM (64MB)<br/>[ Firmware in C ]<br/>[ 10k MNIST Data ]"]:::mem
+        UART["UART Interface<br/>[ litex_term ]<br/>[ 115200 Baud ]"]:::mem
+
+        %% The System Bus
+        Wishbone{"====================<br/>32-bit WISHBONE SYSTEM BUS (50 MHz)<br/>===================="}:::bus
+
+        SDRAM <--> Wishbone
+        Wishbone <--> UART
+
+        %% Control Domain
+        subgraph Control["Control Domain (Standard IP)"]
+            direction LR
+            CPU["VexRiscV CPU<br/>(No FPU)"]:::cpu
+            LED["Hardware I/O<br/>(Status LEDs)"]:::mem
+            Timer["Timer0<br/>(32-bit)"]:::mem
+        end
+
+        Wishbone <--> CPU
+        Wishbone <--> LED
+        Wishbone <--> Timer
+
+        %% Compute Domain
+        subgraph Compute["Compute Domain (Custom IP)"]
+            direction TB
+            CSR["LiteX CSR Bridge<br/>(Memory-Mapped)"]:::bridge
+            HLS["hls4ml AI Engine<br/>-------------------<br/>In: 196 Nodes<br/>L1: 32 Nodes<br/>Out: 10 Nodes<br/>16-bit Fixed-Pt"]:::custom
+            
+            CSR <-->|Hardware Pins| HLS
+        end
+
+        Wishbone <--> CSR
     end
-    
-    E --> K[UART Terminal: Predicted Digit]
 ```
 
 ## The Hardware Handshake
