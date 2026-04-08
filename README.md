@@ -1,8 +1,17 @@
-# Generic TinyML Hardware Accelerator
+## RISC-V & hls4ml Hardware Neural Network Accelerator
 
-An end-to-end, bare-metal hardware AI accelerator for MNIST digit classification. This project provides a generic, standalone Neural Network IP block generated via `hls4ml`, designed to easily bridge to any system bus or microcontroller. The current demonstration integrates this AI core with a RISC-V softcore on an Intel Cyclone V FPGA using LiteX.
+A bare-metal Hardware-Software Co-Design capstone project demonstrating a 78x Architectural Speedup by offloading neural network inference from a soft-core RISC-V processor to a custom FPGA hardware accelerator.
+## Project Overview
+This project explores the extreme performance differences between general-purpose sequential software execution and spatially unrolled parallel hardware computing.
 
-Rather than relying on shallow optimization tricks like Hardware-Aware Quantization (HAQ), this accelerator achieves a minimal footprint through strict architectural scaling, pure digital logic, and perfect reuse-factor divisors to prevent DSP routing failures.
+An entire System-on-Chip (SoC) was generated from scratch and synthesized onto a Terasic DE1-SoC (Intel Cyclone V) FPGA. The system features a 50MHz VexRiscV soft-core CPU orchestrating a custom-built Neural Network engine synthesized via hls4ml. By utilizing a memory-mapped 32-bit Wishbone CSR bridge, the host CPU completely offloads the mathematical workload of an MNIST digit classifier to dedicated FPGA DSP blocks.
+Key Achievements
+
+    100% Bare-Metal: Zero reliance on Linux or heavy operating systems. All firmware is written in pure C.
+
+    Flawless Silicon Execution: Achieved 94% accuracy on a 10,000-image dataset running natively on the Cyclone V fabric.
+
+    Massive Throughput: Accelerated inference from 116 FPS (CPU only) to over 9,000 FPS (Hardware Accelerator).
 
 ## Architecture Overview
 
@@ -20,48 +29,44 @@ The system consists of a highly optimized Python-trained neural network that has
 
 ```mermaid
 flowchart TD
-    classDef bus fill:#e0b0ff,stroke:#333,stroke-width:4px,color:#000
-    classDef cpu fill:#aec6cf,stroke:#333,stroke-width:2px,color:#000
-    classDef mem fill:#d3d3d3,stroke:#333,stroke-width:2px,color:#000
-    classDef custom fill:#77dd77,stroke:#333,stroke-width:2px,color:#000
-    classDef bridge fill:#ffb347,stroke:#333,stroke-width:2px,color:#000
-
-    subgraph FPGA["Cyclone V FPGA (LiteX Soft SoC)"]
-        direction TB
-
-        %% Peripherals & Memory
-        SDRAM["SDRAM (64MB)<br/>[ Firmware in C ]<br/>[ 10k MNIST Data ]"]:::mem
-        UART["UART Interface<br/>[ litex_term ]<br/>[ 115200 Baud ]"]:::mem
-
-        %% The System Bus
-        Wishbone{"====================<br/>32-bit WISHBONE SYSTEM BUS (50 MHz)<br/>===================="}:::bus
-
-        SDRAM <--> Wishbone
-        Wishbone <--> UART
-
-        %% Control Domain
-        subgraph Control["Control Domain (Standard IP)"]
-            direction LR
-            CPU["VexRiscV CPU<br/>(No FPU)"]:::cpu
-            LED["Hardware I/O<br/>(Status LEDs)"]:::mem
-            Timer["Timer0<br/>(32-bit)"]:::mem
-        end
-
-        Wishbone <--> CPU
-        Wishbone <--> LED
-        Wishbone <--> Timer
-
-        %% Compute Domain
-        subgraph Compute["Compute Domain (Custom IP)"]
-            direction TB
-            CSR["LiteX CSR Bridge<br/>(Memory-Mapped)"]:::bridge
-            HLS["hls4ml AI Engine<br/>-------------------<br/>In: 196 Nodes<br/>L1: 32 Nodes<br/>Out: 10 Nodes<br/>16-bit Fixed-Pt"]:::custom
-            
-            CSR <-->|Hardware Pins| HLS
-        end
-
-        Wishbone <--> CSR
+    subgraph SoC ["Cyclone V FPGA (LiteX Soft SoC)"]
+        direction TD
+        
+        %% Row 1: Memory and I/O
+        SDRAM["SDRAM (64MB)<br/>[ Firmware in C ]<br/>[ 10k MNIST Data ]"]
+        UART["UART Interface<br/>[ litex_term Profiling ]<br/>[ 115200 Baud Output ]"]
+        
+        %% Row 2: The Main System Bus
+        WB["============================================================================<br/>32-bit WISHBONE SYSTEM BUS (50 MHz)<br/>============================================================================"]
+        
+        %% Row 3: Control & Bridge Components
+        CPU["VexRiscV<br/>RISC-V CPU<br/>(No FPU)"]
+        IO["Hardware I/O<br/>(Status LEDs)"]
+        CSR["LiteX CSR Bridge<br/>(Memory-Mapped)"]
+        TIMER["Timer0<br/>(32-bit)"]
+        
+        %% Row 4: Custom Hardware Accelerator
+        HLS["hls4ml AI Engine<br/>-----------------<br/>In : 196 Nodes<br/>L1 :  32 Nodes<br/>Out:  10 Nodes<br/>16-bit Fixed-Pt"]
+        
+        %% Layout Connections
+        SDRAM --> WB
+        UART --> WB
+        
+        WB <--> CPU
+        WB <--> IO
+        WB <--> CSR
+        WB <--> TIMER
+        
+        CSR --> HLS
     end
+
+    %% Styling to keep it looking like a clean architectural diagram
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000;
+    classDef bus fill:#e6e6fa,stroke:#333,stroke-width:3px,color:#000,font-weight:bold;
+    classDef custom fill:#d5f5e3,stroke:#333,stroke-width:2px,color:#000;
+    
+    class WB bus;
+    class HLS custom;
 ```
 
 ## The Hardware Handshake
@@ -105,6 +110,57 @@ Run this command to view the boot-up sequence.
     ```bash
     litex_term --kernel firmware/firmware.bin --kernel-adr 0x40000000 --safe /dev/ttyUSB0
     ```
+5. Program the FPGA board with the .sof file
+    ```bash
+    quartus_pgm -c 1 -m JTAG -o "p;build/gateware/terasic_de1soc.sof@2"
+    ```
+
+## Performance Metrics & Benchmarks
+
+To validate the efficiency of the custom Verilog, the exact same neural network architecture (6,592 MACs per image) was profiled in two separate methodologies utilizing a hardware cycle-timer (Timer0):
+
+    Software Baseline: Emulated strictly in C arrays on the VexRiscV CPU.
+
+    Hardware Accelerator: Offloaded via the Wishbone bus to the hls4ml IP.
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Metric</th>
+      <th align="left">Software Baseline (VexRiscV CPU)</th>
+      <th align="left">Hardware Accelerator (<code>hls4ml</code> IP)</th>
+      <th align="left">The Difference</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="left"><strong>Throughput (FPS)</strong></td>
+      <td align="left">116 Frames/sec</td>
+      <td align="left"><strong>9,062 Frames/sec</strong></td>
+      <td align="left"><strong>78x Faster</strong></td>
+    </tr>
+    <tr>
+      <td align="left"><strong>Latency per Image</strong></td>
+      <td align="left">8,589 &mu;s</td>
+      <td align="left"><strong>110 &mu;s</strong></td>
+      <td align="left">Saved 8,479 &mu;s per image</td>
+    </tr>
+    <tr>
+      <td align="left"><strong>CPU Cycles per Image</strong></td>
+      <td align="left">429,496 cycles</td>
+      <td align="left"><strong>5,517 cycles</strong></td>
+      <td align="left"><strong>98.7% Reduction in CPU load</strong></td>
+    </tr>
+    <tr>
+      <td align="left"><strong>Compute Performance</strong></td>
+      <td align="left">1.52 MOPS</td>
+      <td align="left"><strong>119.47 MOPS</strong></td>
+      <td align="left">Massive spatial parallelism</td>
+    </tr>
+  </tbody>
+</table>
+
+
 ## References & Acknowledgments
 
 This project bridges the gap between machine learning and bare-metal hardware by leveraging several incredible open-source tools and frameworks. If you are exploring this repository, I highly recommend checking out the documentation for the following projects:
